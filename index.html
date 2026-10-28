@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ea">
+  <meta name="description" content="みまもりベビベビは、看護師の経験を生かして子どもと家族に寄り添うベビーシッターサービスを目指しています。サービス内容・利用相談・提携相談はこちら。">
+  <title>みまもりベビベビ｜子どもと家族に寄り添うシッターサービス</title>
+  <style>
+    :root {
+      --cream: #f7f3ea;
+      --paper: #fffdf8;
+      --sage: #718a78;
+      --sage-dark: #496451;
+      --sage-pale: #e6ede5;
+      --pink: #f1d9d5;
+      --ink: #34443a;
+      --muted: #68746b;
+      --line: #e3e5dc;
+      --white: #fff;
+      --shadow: 0 18px 55px rgba(67, 83, 68, .09);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+        "Yu Gothic", "Meiryo", sans-serif;
+      line-height: 1.8;
+      letter-spacing: .025em;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .announcement {
+      padding: 8px 16px; text-align: center; font-size: 12px;
+      background: var(--sage-dark); color: #fff;
+    }
+    header {
+      position: sticky; top: 0; z-index: 10; background: rgba(255,253,248,.94);
+      backdrop-filter: blur(12px); border-bottom: 1px solid rgba(227,229,220,.8);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; }
+    .brand-mark {
+      width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%;
+      background: var(--sage-pale); font-size: 23px;
+    }
+    .brand small { display: block; font-size: 10px; color: var(--muted); font-weight: 500; letter-spacing: .12em; }
+    .navlinks { display: flex; align-items: center; gap: 22px; font-size: 13px; }
+    .navlinks a { text-decoration: none; }
+    .navlinks a:hover { color: var(--sage-dark); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 48px; padding: 12px 22px; border-radius: 999px;
+      background: var(--sage-dark); color: white; text-decoration: none;
+      border: 1px solid var(--sage-dark); font-size: 14px; font-weight: 700;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(73,100,81,.18); }
+    .btn.secondary { background: transparent; color: var(--sage-dark); }
+    .hero { overflow: hidden; background: var(--cream); padding: 74px 0 80px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--sage-dark); font-size: 12px; font-weight: 800; letter-spacing: .16em; }
+    .eyebrow:before { content: ""; width: 24px; height: 1px; background: currentColor; }
+    h1 { font-size: clamp(34px, 5vw, 58px); line-height: 1.35; letter-spacing: .02em; margin: 20px 0; font-weight: 800; }
+    h1 em { color: var(--sage-dark); font-style: normal; position: relative; }
+    .hero-copy { color: #5e6d61; font-size: 16px; max-width: 520px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .note { color: var(--muted); font-size: 11px; margin-top: 18px; }
+    .hero-art { position: relative; min-height: 390px; display: grid; place-items: center; }
+    .sun { position: absolute; width: 280px; height: 280px; border-radius: 50%; background: #f0dfd0; top: 28px; right: 25px; }
+    .art-card {
+      position: relative; z-index: 1; width: min(390px, 100%); min-height: 310px;
+      padding: 32px; border-radius: 48% 48% 38% 38%; background: #e5ece3;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      text-align: center; box-shadow: var(--shadow); border: 8px solid rgba(255,255,255,.55);
+    }
+    .art-emoji { font-size: 105px; line-height: 1.2; filter: saturate(.8); }
+    .art-caption { font-family: Georgia, serif; font-size: 20px; color: var(--sage-dark); margin-top: 12px; }
+    .float-tag { position: absolute; z-index: 2; background: white; border-radius: 16px; padding: 12px 16px; box-shadow: var(--shadow); font-size: 12px; }
+    .tag-one { top: 42px; left: 0; transform: rotate(-5deg); }
+    .tag-two { right: 0; bottom: 36px; transform: rotate(4deg); }
+    section { padding: 82px 0; }
+    .section-head { text-align: center; max-width: 700px; margin: 0 auto 42px; }
+    .section-head .eyebrow { justify-content: center; }
+    h2 { font-size: clamp(27px, 3vw, 38px); line-height: 1.45; margin: 12px 0; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .intro-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 52px; align-items: center; }
+    .quote-card { padding: 34px; border-radius: var(--radius); background: var(--sage-pale); }
+    .quote-card .big { font-size: 32px; color: var(--sage-dark); line-height: 1.5; font-weight: 800; }
+    .quote-card p { color: #5d6d61; margin-bottom: 0; }
+    .intro-text p { color: #5d6b60; }
+    .mini-label { display: inline-block; padding: 5px 12px; border-radius: 999px; background: var(--pink); font-size: 11px; font-weight: 700; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { border: 1px solid var(--line); background: white; border-radius: var(--radius); padding: 27px; box-shadow: 0 8px 28px rgba(67,83,68,.035); }
+    .card-icon { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 18px; background: var(--cream); font-size: 27px; margin-bottom: 18px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .soft { background: #f8f8f3; }
+    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .service { display: flex; gap: 18px; padding: 24px; border-radius: 20px; background: white; border: 1px solid var(--line); }
+    .service .emoji { font-size: 32px; }
+    .service h3 { margin: 0 0 5px; font-size: 17px; }
+    .service p { margin: 0; color: var(--muted); font-size: 13px; }
+    .notice { margin-top: 22px; padding: 18px 22px; border-radius: 16px; background: #fff4e7; color: #6b5844; font-size: 13px; }
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; counter-reset: step; }
+    .step { position: relative; padding: 24px 18px; border-radius: 20px; background: var(--cream); }
+    .step:before { counter-increment: step; content: "0" counter(step); display: block; font-family: Georgia,serif; font-size: 27px; color: var(--sage); margin-bottom: 12px; }
+    .step h3 { margin: 0 0 6px; font-size: 16px; }
+    .step p { margin: 0; color: var(--muted); font-size: 13px; }
+    .pricing { max-width: 760px; margin: auto; border-radius: 28px; padding: 34px; background: var(--cream); text-align: center; }
+    .pricing .price { font-size: 22px; font-weight: 800; color: var(--sage-dark); margin: 14px 0; }
+    .pricing p { color: var(--muted); font-size: 14px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .contact-card { padding: 30px; border-radius: 24px; background: white; border: 1px solid var(--line); }
+    .contact-card h3 { margin-top: 0; }
+    .contact-card p { color: var(--muted); font-size: 14px; }
+    details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    summary { cursor: pointer; font-weight: 700; }
+    details p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
+    .faq { max-width: 800px; margin: auto; }
+    .cta { background: var(--sage-dark); color: white; text-align: center; padding: 66px 0; }
+    .cta p { color: #e3ebe3; }
+    .cta .btn { background: white; color: var(--sage-dark); border-color: white; }
+    footer { padding: 30px 0 100px; background: #f7f3ea; font-size: 12px; color: var(--muted); }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a { text-decoration: none; }
+    .mobile-cta { display: none; }
+    @media (max-width: 800px) {
+      .nav { min-height: 66px; }
+      .navlinks { gap: 12px; }
+      .navlinks a:not(.btn) { display: none; }
+      .navlinks .btn { min-height: 40px; padding: 8px 14px; font-size: 12px; }
+      .hero { padding: 48px 0 56px; }
+      .hero-grid, .intro-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-art { min-height: 330px; }
+      .sun { width: 230px; height: 230px; right: 10%; }
+      .art-card { width: 300px; min-height: 265px; }
+      .art-emoji { font-size: 82px; }
+      section { padding: 62px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .service-grid, .split { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2,1fr); }
+      .quote-card { padding: 26px; }
+      .mobile-cta { display: block; position: fixed; z-index: 12; bottom: 0; left: 0; right: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,253,248,.96); border-top: 1px solid var(--line); }
+      .mobile-cta .btn { width: 100%; }
+      footer { padding-bottom: 100px; }
+    }
+    @media (max-width: 420px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .brand { font-size: 14px; }
+      .brand-mark { width: 36px; height: 36px; }
+      h1 { font-size: 34px; }
+      .hero-copy { font-size: 14px; }
+      .hero-actions .btn { width: 100%; }
+      .steps { grid-template-columns: 1fr; }
+      .pricing { padding: 24px 18px; }
+      .tag-one { left: -4px; }
+      .tag-two { right: -4px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">開業準備中｜サービス内容・開始時期は決まり次第お知らせします</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="みまもりベビベビ トップ">
+        <span class="brand-mark">🐣</span>
+        <span>みまもりベビベビ<small>CHILDCARE WITH CARE</small></span>
+      </a>
+      <nav class="navlinks" aria-label="メインメニュー">
+        <a href="#about">私たちについて</a>
+        <a href="#service">サービス</a>
+        <a href="#flow">ご利用の流れ</a>
+        <a class="btn" href="#contact">お問い合わせ ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">GROW WITH YOU</div>
+          <h1>子育てに、<br><em>ひとりじゃない</em><br>という安心を。</h1>
+          <p class="hero-copy">子どものことも、家族のことも。<br>看護師の経験を生かしながら、一人ひとりの毎日に寄り添うシッターサービスを目指しています。</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">利用・相談について <span>↗</span></a>
+            <a class="btn secondary" href="#about">ベビベビについて</a>
+          </div>
+          <p class="note">※現在、サービス開始に向けて準備中です。掲載内容は検討中の案を含みます。</p>
+        </div>
+        <div class="hero-art" aria-label="やさしい雰囲気のイラスト">
+          <div class="sun"></div>
+          <div class="float-tag tag-one">🌿 家族に寄り添う</div>
+          <div class="art-card">
+            <div class="art-emoji">🧸🤍</div>
+            <div class="art-caption">little hands, big love</div>
+            <div style="font-size:12px;color:#657769;margin-top:7px">子どもの「いつも」を大切に。</div>
+          </div>
+          <div class="float-tag tag-two">🩺 看護師の経験を生かして</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap intro-grid">
+        <div class="quote-card">
+          <span class="mini-label">OUR PROMISE</span>
+          <div class="big">子どもを見守る。<br>家族の余白をつくる。</div>
+          <p>頼れる人がいることで、少し深呼吸できる日が増えますように。</p>
+        </div>
+        <div class="intro-text">
+          <div class="eyebrow">ABOUT US</div>
+          <h2>「ちょっと助けて」が、<br>気軽に言える子育てへ。</h2>
+          <p>仕事、通院、きょうだいのお世話、休息の時間。子育ての日々には、誰かの手を借りたい瞬間があります。</p>
+          <p>みまもりベビベビは、看護師としての経験を大切にしながら、子どもとご家族それぞれの気持ちに寄り添うサポートを目指しています。</p>
+          <p>安心して相談できる場所になるために、安全面・利用方法・対応できるケアを一つずつ整えていきます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">OUR VALUES</div>
+          <h2>大切にしたい、3つのこと。</h2>
+          <p>どんなときも、子どもとご家族を中心に考えます。</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">🤲</div>
+            <h3>気持ちに寄り添う</h3>
+            <p>ご家庭ごとの生活リズムや想いを伺い、一人ひとりに合ったサポートを一緒に考えます。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🩺</div>
+            <h3>看護の視点を大切に</h3>
+            <p>看護師としての経験を生かし、安全に配慮した環境づくりと丁寧な情報共有を目指します。</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🌱</div>
+            <h3>家族の毎日を支える</h3>
+            <p>保護者が安心して仕事や用事、休息の時間を持てるよう、子育てを支える選択肢を増やします。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">SERVICE</div>
+          <h2>こんなときのサポートを目指しています。</h2>
+          <p>具体的なサービス内容・対象年齢・対応地域は、開業準備の進捗に応じて確定します。</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <div class="emoji">💼</div>
+            <div><h3>仕事や用事があるとき</h3><p>仕事、通院、きょうだいの行事など、保護者の予定に合わせた見守りを検討しています。</p></div>
+          </article>
+          <article class="service">
+            <div class="emoji">☕</div>
+            <div><h3>少し休息をとりたいとき</h3><p>家事や育児が続く毎日に、保護者が自分の時間を持つためのサポートを目指します。</p></div>
+          </article>
+          <article class="service">
+            <div class="emoji">🍼</div>
+            <div><h3>乳幼児の見守り</h3><p>お子さまの年齢やご家庭の希望を伺い、対応可能な内容を事前に確認します。</p></div>
+          </article>
+          <article class="service">
+            <div class="emoji">🩹</div>
+            <div><h3>医療的な配慮について相談したいとき</h3><p>必要なケアや健康状態を伺い、実施体制・安全性・対応可否を個別に確認します。</p></div>
+          </article>
+        </div>
+        <div class="notice">大切なお知らせ：医療的ケア、病児のお預かり、緊急時対応などは、スタッフ体制・必要な手続き・安全管理体制を確認したうえで対応範囲を決定します。現時点で対応をお約束するものではありません。</div>
+      </div>
+    </section>
+
+    <section class="soft" id="flow">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">HOW TO USE</div>
+          <h2>ご利用までの流れ</h2>
+          <p>受付開始後の想定フローです。詳細はサービス開始前にご案内します。</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>お問い合わせ</h3><p>ご希望やお困りごとをお聞かせください。</p></article>
+          <article class="step"><h3>事前ヒアリング</h3><p>お子さまの様子、希望日時、必要なサポートを確認します。</p></article>
+          <article class="step"><h3>内容・条件の確認</h3><p>対応可否、料金、注意事項を事前にご説明します。</p></article>
+          <article class="step"><h3>ご利用</h3><p>内容に合意いただいたうえで、利用開始となります。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="price">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">PRICE</div>
+          <h2>料金について</h2>
+          <p>安心して利用していただけるよう、わかりやすい料金体系を準備しています。</p>
+        </div>
+        <div class="pricing">
+          <div class="card-icon" style="margin:0 auto 12px">🧾</div>
+          <h3>料金・交通費・キャンセル規定</h3>
+          <div class="price">現在、準備中です</div>
+          <p>利用時間、対象年齢、対応内容、交通費などを整理し、正式な料金表を公開します。</p>
+          <p>ご案内前に費用が発生することはありません。現時点では、こちらのページから予約・決済はできません。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="partners">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">PARTNERSHIP</div>
+          <h2>地域で子育てを支える仲間へ。</h2>
+          <p>ご家庭だけでなく、子どもを支える地域の皆さまとつながることも大切にしています。</p>
+        </div>
+        <div class="split">
+          <article class="contact-card">
+            <div class="card-icon">🏥</div>
+            <h3>クリニック・地域の支援機関の皆さま</h3>
+            <p>子育て支援やご家庭のサポートに関する連携・情報交換のご相談をお待ちしています。</p>
+            <a class="btn secondary" href="#contact">提携について相談する</a>
+          </article>
+          <article class="contact-card">
+            <div class="card-icon">👩‍⚕️</div>
+            <h3>一緒に活動するスタッフの皆さま</h3>
+            <p>看護師・保育士など、子どもとご家族を支える仲間とのつながりを大切にします。</p>
+            <a class="btn secondary" href="#contact">スタッフ募集について</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">FAQ</div>
+          <h2>よくあるご質問</h2>
+        </div>
+        <div class="faq">
+          <details><summary>いつから利用できますか？</summary><p>現在、サービス開始に向けて準備中です。開始時期や受付方法が決まり次第、このページでお知らせします。</p></details>
+          <details><summary>どの地域が対象ですか？</summary><p>対応地域は調整中です。ご希望の地域をお問い合わせ時にお知らせください。</p></details>
+          <details><summary>病気の子どもや医療的ケアが必要な子どももお願いできますか？</summary><p>お子さまの状態や必要なケア、スタッフ体制などを確認し、対応可否を個別に判断します。すべてのケースへの対応をお約束するものではありません。</p></details>
+          <details><summary>料金はどこで確認できますか？</summary><p>正式な料金表は準備中です。受付開始前に、利用料・交通費・キャンセル規定などを明示します。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="soft">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">CONTACT</div>
+          <h2>まずは、お気軽にご相談ください。</h2>
+          <p>利用に関するご相談、提携、スタッフ募集についてのお問い合わせ窓口です。</p>
+        </div>
+        <div class="split">
+          <article class="contact-card">
+            <div class="card-icon">💌</div>
+            <h3>お問い合わせ</h3>
+            <p>正式な窓口を準備中です。公開前にメールアドレスまたは問い合わせフォームを設定してください。</p>
+            <p><strong>メール：</strong>【メールアドレスを設定してください】</p>
+            <a class="btn" href="mailto:CONTACT_EMAIL_PLACEHOLDER?subject=みまもりベビベビへのお問い合わせ">メールで問い合わせる ↗</a>
+            <p style="font-size:11px;margin-top:14px">※公開前に、上記の仮メールアドレスを実際の連絡先に変更してください。</p>
+          </article>
+          <article class="contact-card">
+            <div class="card-icon">📍</div>
+            <h3>サービス情報</h3>
+            <p><strong>サービス名：</strong>みまもりベビベビ</p>
+            <p><strong>対応地域：</strong>調整中</p>
+            <p><strong>サービス開始：</strong>準備中</p>
+            <p><strong>運営者・事業者情報：</strong>公開前に確定・記載</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="eyebrow" style="color:#d8e5d9;justify-content:center">A LITTLE MORE SUPPORT</div>
+        <h2>子育ての日々に、<br>頼れる選択肢を。</h2>
+        <p>みまもりベビベビは、サービス開始に向けて準備を進めています。</p>
+        <a class="btn" href="#contact">お問い合わせ・提携相談</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div><strong>🐣 みまもりベビベビ</strong><br>子どもと家族に寄り添うシッターサービス</div>
+      <div class="footer-links"><a href="#about">私たちについて</a><a href="#service">サービス</a><a href="#faq">FAQ</a><a href="#contact">お問い合わせ</a></div>
+      <div>© <span id="year"></span> みまもりベビベビ</div>
+    </div>
+  </footer>
+  <div class="mobile-cta"><a class="btn" href="#contact">お問い合わせ・相談する ↗</a></div>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
